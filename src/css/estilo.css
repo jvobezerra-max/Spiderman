@@ -1,0 +1,135 @@
+:root{
+    --color-primary:rgb(12, 16, 226);
+    --bg-dark:#ff0000e4;
+    --text-color:#fff;
+    --btn-color:#1520c3;
+    --header-bg: rgba(0,0,0,0.8);
+    --linear-bg: linear-gradient(to right,rgb(255, 0, 0),rgb(13, 27, 184));
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--color-primary);
+    color: var(--text-color);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background: var(--bg-dark);
+}
+
+.logo {
+    padding: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.7rem;
+}
+
+.logo span {
+    color: var(--btn-color);
+    padding: 10px;
+}
+
+.logo:hover {
+    color: var(--bg-dark);
+    letter-spacing: 10px;
+    animation: acender 0.5s forwards;
+    cursor: default;
+}
+
+@keyframes acender {
+    to {
+        color: var(--text-color);
+        text-shadow: 0 0 10px #f7f7f8, 0 0 20px #fafbfe ;
+    }
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+nav ul li {
+    padding: 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+nav ul li a:hover {
+    color: var(--color-primary);
+    text-transform: uppercase;
+}
+
+.menu-hamburguer {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.menu-hamburguer span {
+    width: 100%;
+    height: 3px;
+    background: var(--color-primary);
+    border-radius: 10px;
+}
+/* ESTILIZAÇÃO SLIDESHOW */
+#banner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#imgBanner{
+    width: 500px;
+    height: 500px;
+    border-radius: 20%;
+}
+footer {
+    text-align: center;
+    padding: 40px;
+    margin-top: 200px;
+}
+
+@media (max-width: 768px){
+    .menu-hamburguer {
+        display: flex;
+    }
+    nav {
+        display: none;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: var(--header-bg);
+        flex-direction: column;
+        padding: 20px 0;
+    }
+    nav.active {
+        display: block;
+    }
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+    #imgBanner{
+        width:80%;
+        height:60%;
+    }
+}
+
+.open span:nth-child(1){transform: rotate(45deg) translate(5px, 5px);}
+.open span:nth-child(2){opacity:0;}
+.open span:nth-child(3){transform:rotate(-45deg)translate(7px, -7px);}
